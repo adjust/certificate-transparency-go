@@ -625,7 +625,7 @@ func namedCurveFromOID(oid asn1.ObjectIdentifier, nfe *NonFatalErrors) elliptic.
 	case oid.Equal(OIDNamedCurveP521):
 		return elliptic.P521()
 	case oid.Equal(OIDNamedCurveP192):
-		nfe.AddError(errors.New("insecure curve (secp192r1) specified"))
+		// nfe.AddError(errors.New("insecure curve (secp192r1) specified"))
 		return secp192r1()
 	}
 	return nil
